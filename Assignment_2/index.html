@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script>
+        var timer;
+        var index = 1;
+        window.onload = function(){
+            timer = setInterval(changeImage, 2000);
+        }
+        function changeImage(){
+            var img_url;
+            var title = document.getElementById("im");
+            var desc = document.getElementById("header");
+            if(index == 1)
+            {
+                img_url = "Images/1.jpg";
+                desc.innerHTML = 'Fight Club';
+                title.title = 'Fight Club';
+            }
+            else if(index == 2)
+            {
+                img_url = "Images/2.jpeg";
+                desc.innerHTML = 'John Wick';
+                title.title = 'John Wick';
+            }
+            else if(index == 3)
+            {
+                img_url = "Images/3.jpg";
+                desc.innerHTML = 'The Hunger <br/>Game';
+                title.title = 'The Hunger Game';
+            }
+            else if(index == 4)
+            {
+                img_url = "Images/4.jpg";
+                desc.innerHTML = 'Thor';
+                title.title = 'Thor';
+            }
+            else if(index == 5)
+            {
+                img_url = "Images/5.jpg";
+                desc.innerHTML = 'Rustom';
+                title.title = 'Rustom';
+            }
+            else{
+                index = 1;
+                img_url.visibility = false;
+            }
+            document.getElementById("im").src = img_url;
+            index++;
+        }
+    </script>
+    <style>
+        #im{
+            margin-top: 40px;
+            margin-left: 200px;
+            width: 340px;
+            height: 520px;
+            background: white;
+            box-shadow: 0 10px 20px 0 rgba(0,0,0,0.6);
+        }
+        #description{
+            float: right;
+            margin-right: 450px;
+            margin-top: 200px;
+            width: auto;
+        }
+        #content-holder{
+            float: left;
+        }
+        a{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper" style="background: white;">
+      <a href="#" class="brand-logo center"><img src="Images/icon.png" style="padding-top: 4px;"></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a style="color: black;" href="sass.html">Home</a></li>
+        <li><a style="color: black;" href="badges.html">Practices</a></li>
+        <li><a style="color: black;" href="collapsible.html">Assignments</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div id="content-holder">
+        <img id="im" src="Images/1.jpg" title="Fight Club" style="height: 500px; width: 340px;vertical-align: middle;">
+    </div>
+    <div id="description">
+        <h1 id="header">Fight Club</h1>
+    </div>
+</body>
+</html>
